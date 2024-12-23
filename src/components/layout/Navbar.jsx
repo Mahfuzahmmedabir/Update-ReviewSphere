@@ -71,13 +71,13 @@ const Navbar = () => {
                   document.getElementById('my_modal_2').showModal()
                 }
               >
-                <button>
+                <span>
                   {user?.photoURL ? (
                     <img className="rounded-full w-8" src={user?.photoURL} alt="" />
                   ) : (
                     user.email
                   )}
-                </button>
+                </span>
               </button>
               <dialog
                 id="my_modal_2"

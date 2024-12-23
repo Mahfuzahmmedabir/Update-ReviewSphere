@@ -5,6 +5,12 @@ import Service from './Service';
 const Home = () => {
   const service = useLoaderData()
   console.log(service)
+
+
+
+
+
+
   return (
     <div>
       <Banner></Banner>
@@ -20,8 +26,5 @@ const Home = () => {
 export default Home;
 
 
-// git remote add origin  https://github.com/programming-hero-web-course2/b10a11-client-side-Mahfuzahmmedabir.git
-
-// https://github.com/programming-hero-web-course2/b10a11-client-side-Mahfuzahmmedabir.git
 
 

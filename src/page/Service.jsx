@@ -1,8 +1,13 @@
 import React from 'react';
-import { AiOutlineConsoleSql } from 'react-icons/ai';
+import { Link } from 'react-router-dom';
+
 
 const Service = ({ service }) => {
-  console.log(service)
+  console.log(service);
+
+
+  const {_id, Description,category, Photourl, Price, ServiceTitle } = service;
+
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-xl">
@@ -14,13 +19,13 @@ const Service = ({ service }) => {
         </figure>
         <div className="card-body">
           <h2 className="card-title">
-            Shoes!
-            <div className="badge badge-secondary">NEW</div>
+            {ServiceTitle}
+            <div className="badge badge-secondary"></div>
           </h2>
           <p>If a dog chews shoes whose shoes does he choose?</p>
           <div className="card-actions justify-end">
             <div className="badge badge-outline">Fashion</div>
-            <div className="badge badge-outline">Products</div>
+            <Link to={`/seedetails/${_id}`} className="badge badge-outline">See Details</Link>
           </div>
         </div>
       </div>
