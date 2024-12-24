@@ -1,42 +1,39 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-  console.log(service);
+ 
 
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
 
-
-// 
-// https://i.ibb.co.com/6gYt37X/attachment-97838747.jpg
-// https://i.ibb.co.com/j8zchcW/istockphoto-1125880278-612x612.jpg
-// https://i.ibb.co.com/Jc2KLrf/depositphotos-369764632-stock-illustration-bulb-tech-logo-icon-idea.webp
-//
-
-
-
-
-
-
-
+  const handealDelete = id => {
+    axios
+      .delete(`http://localhost:5000/service/${id}`)
+      .then(data => console.log(data.data));
+    alert('delete');
+  };
 
   return (
     <div>
-      <div className="card bg-base-100 w-96 shadow-xl">
-        <figure>
-          <img className="w-64 h-48 p-4" src={Photourl} alt="Shoes" />
+      <div className=" p-8  rounded-2xl bg-slate-300 hover:shadow-xl">
+        <figure className="">
+          <img
+            className="w-52   rounded-2xl h-32 "
+            src={Photourl}
+            alt="Shoes"
+          />
         </figure>
-        <div className="card-body">
-          <h2 className="card-title">
-            {ServiceTitle}
-            <div className="badge badge-secondary"></div>
-          </h2>
-          <p>If a dog chews shoes whose shoes does he choose?</p>
-          <div className="card-actions justify-end">
-            <div className="badge badge-outline">Fashion</div>
+        <div className="">
+          <h2 className="card-title text-2xl">{ServiceTitle}</h2>
+          <p>{Description}</p>
+          <p className="text-gray-500 text-xl">Price ${Price}</p>
+          <div className="card-actions justify-center">
             <Link to={`/seedetails/${_id}`} className="badge badge-outline">
               See Details
             </Link>
+
+            <button onClick={() => handealDelete(_id)}>deldat</button>
           </div>
         </div>
       </div>

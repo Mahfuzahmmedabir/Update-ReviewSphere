@@ -40,16 +40,18 @@ const Login = () => {
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handealLogin} className="card-body">
-              <h2 className='text-center text-3xl'>Login </h2>
+              <h2 className="text-center text-3xl">Login </h2>
               {/* Login with goole */}
-               <div className="text-center border p-3 rounded-full  mx-auto mt-5">
-                            <button
-                              onClick={handealPopup}
-                              className="flex gap-2 items-center font-semibold"
-                            >
-                              <FcGoogle className="text-2xl"></FcGoogle> Sign up with Google
-                            </button>
-                          </div>
+              <div className="text-center border p-3 rounded-full  mx-auto mt-5">
+                <button
+                  onClick={handealPopup}
+                  className="flex gap-2 items-center font-semibold"
+                >
+                  <FcGoogle className="text-2xl"></FcGoogle> Sign up with Google
+                </button>
+              </div>
+
+              <div className="divider ">OR</div>
 
               <div className="form-control">
                 <label className="label">
@@ -57,7 +59,7 @@ const Login = () => {
                 </label>
                 <input
                   type="email"
-                  name='email'
+                  name="email"
                   placeholder="email"
                   className="input input-bordered"
                   required
@@ -69,7 +71,7 @@ const Login = () => {
                 </label>
                 <input
                   type="password"
-                  name='password'
+                  name="password"
                   placeholder="password"
                   className="input input-bordered"
                   required

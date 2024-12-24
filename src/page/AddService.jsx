@@ -1,10 +1,13 @@
 import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
+  const navegate = useNavigate()
   const handealSubmit = e => {
+    
     e.preventDefault();
     const addService = new FormData(e.target);
     const service = Object.fromEntries(addService.entries());
@@ -12,7 +15,10 @@ const AddService = () => {
 
     axios.post('http://localhost:5000/service', service)
      .then(result => {
-      console.log(result);
+       console.log(result);
+       navegate('/')
+
+    
     });
 
     

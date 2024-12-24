@@ -8,10 +8,10 @@ const Navbar = () => {
     <>
       <NavLink to="/">Home</NavLink>
       <NavLink to={'/se'}> Services</NavLink>
-      {user ? (
+      {user?.email ? (
         <>
           <NavLink to={'/addservice'}>Add Service</NavLink>
-          <NavLink to={'/services'}> My Services</NavLink>
+          <NavLink to={'/myservice'}> My Services</NavLink>
           <NavLink to={'/reviews'}>My Reviews</NavLink>
         </>
       ) : (
@@ -61,32 +61,41 @@ const Navbar = () => {
       </div>
       <div className="navbar-end">
         <div>
-          {user?.email ? (
+          {user ? (
             <div>
-              
-
               <button
-                className=" "
+                className=""
                 onClick={() =>
                   document.getElementById('my_modal_2').showModal()
                 }
               >
                 <span>
                   {user?.photoURL ? (
-                    <img className="rounded-full w-8" src={user?.photoURL} alt="" />
+                    <img
+                      className="rounded-full w-8"
+                      src={user?.photoURL}
+                      alt="photoURL"
+                    />
                   ) : (
-                    user.email
+                    <div className="rounded-full px-4 py-2 bg-orange-500 text-white font-semibold">
+                      {user.email.toUpperCase().slice(0, 1)}
+                    </div>
                   )}
                 </span>
               </button>
               <dialog
                 id="my_modal_2"
-                className="modal  lg:-mt-60 lg:ml-[500px] -mt-32  "
+                className="modal lg:-mt-48 lg:ml-[500px] -mt-32"
               >
                 <div className="modal-box w-48 lg:w-96  ">
-                  <h3 className="font-bold text-lg text-center">
-                    {user?.displayName}
+                  <h3 className="font-bold mb-3 text-lg text-center">
+                    {user?.email}
                   </h3>
+                  <div className="flex flex-col">
+                    <NavLink to={'/addservice'}>Add Service</NavLink>
+                    <NavLink to={'/myservice'}> My Services</NavLink>
+                    <NavLink to={'/reviews'}>My Reviews</NavLink>
+                  </div>
 
                   <p className=" text-center">
                     <button onClick={handealLogOut} className="btn">
@@ -101,8 +110,16 @@ const Navbar = () => {
             </div>
           ) : (
             <div>
+              <Link to={'/register'}>
+                <button className="py-2 px-3 border text-green-600 rounded-md font-medium">
+                  Register
+                </button>
+              </Link>
+              OR
               <Link to={'/login'}>
-                <button>Login</button>
+                <button className="py-2 px-3 border text-green-600 rounded-md font-medium">
+                  Login
+                </button>
               </Link>
             </div>
           )}

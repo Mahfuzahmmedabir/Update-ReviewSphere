@@ -7,7 +7,6 @@ const DetailsService = () => {
    const { _id, Description, category, Photourl, Price, ServiceTitle } =
      details;
 
-  
   return (
     <div>
       <div className="card bg-base-100 w-96 shadow-xl">

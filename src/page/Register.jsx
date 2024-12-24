@@ -49,6 +49,7 @@ const Register = () => {
     signUpwithpopup().then(result => {
       console.log(result.user);
       Swal.fire('Log In successfully');
+      navigate('/');
     });
   };
 

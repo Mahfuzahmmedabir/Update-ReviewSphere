@@ -5,6 +5,8 @@ import Login from '../page/Login';
 import Register from '../page/Register';
 import AddService from '../page/AddService';
 import DetailsService from '../page/DetailsService';
+import MyService from '../page/MyService';
+import Private from './Private';
 
 const router = createBrowserRouter([
   {
@@ -18,18 +20,26 @@ const router = createBrowserRouter([
       },
       {
         path: '/addservice',
-        element: <AddService></AddService>,
+
+        element: (
+          <Private>
+            <AddService></AddService>
+          </Private>
+        ),
       },
-      // {
-      //   path: '/seedetails/:id',
-      //   element:
-      //   // loader: ({ params }) => fetch(`http://localhost:5000/${params.id}`),
-      // },
       {
         path: '/seedetails/:id',
         element: <DetailsService></DetailsService>,
-        loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`),
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
       },
+      {
+        path: '/myservice',
+        element: <MyService></MyService>,
+      },
+      {
+        
+      }
     ],
   },
   {
