@@ -1,9 +1,17 @@
+import axios from 'axios';
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const Service = ({ service }) => {
-  
+const HomeCard = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
+  
+  const handealDelete = id => {
+    axios
+      .delete(`http://localhost:5000/service/${id}`)
+      .then(data => console.log(data.data));
+    alert('delete');
+  };
+
   return (
     <div>
       <div className=" p-8  rounded-2xl bg-slate-300 hover:shadow-xl">
@@ -17,12 +25,12 @@ const Service = ({ service }) => {
         <div className="">
           <h2 className="card-title text-2xl">{ServiceTitle}</h2>
           <p>{Description}</p>
-          <p>Category: {category}</p>
           <p className="text-gray-500 text-xl">Price ${Price}</p>
           <div className="card-actions justify-center">
             <Link to={`/seedetails/${_id}`} className="badge badge-outline">
               See Details
             </Link>
+            <button onClick={() => handealDelete(_id)}>deldat</button>
           </div>
         </div>
       </div>
@@ -30,4 +38,4 @@ const Service = ({ service }) => {
   );
 };
 
-export default Service;
+export default HomeCard;

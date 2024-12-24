@@ -7,6 +7,7 @@ import AddService from '../page/AddService';
 import DetailsService from '../page/DetailsService';
 import MyService from '../page/MyService';
 import Private from './Private';
+import Services from '../page/Services';
 
 const router = createBrowserRouter([
   {
@@ -38,8 +39,10 @@ const router = createBrowserRouter([
         element: <MyService></MyService>,
       },
       {
-        
-      }
+        path: '/serivec',
+        element: <Services></Services>,
+        loader: () => fetch('http://localhost:5000/service'),
+      },
     ],
   },
   {

@@ -7,7 +7,7 @@ const Navbar = () => {
   const links = (
     <>
       <NavLink to="/">Home</NavLink>
-      <NavLink to={'/se'}> Services</NavLink>
+      <NavLink to={'/serivec'}> Services</NavLink>
       {user?.email ? (
         <>
           <NavLink to={'/addservice'}>Add Service</NavLink>
