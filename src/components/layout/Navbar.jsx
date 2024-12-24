@@ -11,8 +11,8 @@ const Navbar = () => {
       {user ? (
         <>
           <NavLink to={'/addservice'}>Add Service</NavLink>
-          <NavLink to={'/reviews'}>My Reviews</NavLink>
           <NavLink to={'/services'}> My Services</NavLink>
+          <NavLink to={'/reviews'}>My Reviews</NavLink>
         </>
       ) : (
         <></>
