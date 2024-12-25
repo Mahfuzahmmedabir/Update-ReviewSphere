@@ -2,6 +2,8 @@ import React, { useContext } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
+import addServiceAnimation from '../../public/Animation - 1735165660947.json';
+import Lottie from 'lottie-react';
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -17,21 +19,19 @@ const AddService = () => {
     });
   };
   return (
-    <div className="hero bg-base-200 ">
-      <div className="hero-content flex-col lg:flex-row">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <div className="  ">
+      <div className="hero-content flex-col gap-7 lg:gap-40   lg:flex-row">
+        <div className="lg:w-6/12 ">
+          <Lottie animationData={addServiceAnimation}></Lottie>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
-          <form onSubmit={handealSubmit} className="card-body">
+
+        <div className=" lg:w-6/12 bg-slate-100 rounded-lg p-5 ">
+          <form onSubmit={handealSubmit} className=" ">
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Service Image</span>
+                <span className="label-text text-[16px] font-medium">
+                  Service url
+                </span>
               </label>
               <input
                 type="url"
@@ -43,7 +43,10 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text"> Service Title</span>
+                <span className="label-text text-[16px] font-medium">
+                  {' '}
+                  Service Title
+                </span>
               </label>
               <input
                 type="text"
@@ -55,7 +58,9 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Company Name</span>
+                <span className="label-text text-[16px] font-medium">
+                  Company Name
+                </span>
               </label>
               <input
                 type="text"
@@ -67,9 +72,11 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Category</span>
+                <span className="label-text text-[16px] font-medium">
+                  Category
+                </span>
               </label>
-              <select className="border" name="category" id="">
+              <select className="border py-3 rounded-lg" name="category" id="">
                 <option value="saas">Healthcare</option>
                 <option value="saas">Hospitality and Tourism</option>
                 <option value="saas">e commerce</option>
@@ -77,7 +84,9 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Price</span>
+                <span className="label-text text-[16px] font-medium">
+                  Price
+                </span>
               </label>
               <input
                 type="number"
@@ -89,7 +98,7 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Date</span>
+                <span className="label-text text-[16px] font-medium">Date</span>
               </label>
               <input
                 type="date"
@@ -101,7 +110,9 @@ const AddService = () => {
             </div>
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Email</span>
+                <span className="label-text text-[16px] font-medium">
+                  Email
+                </span>
               </label>
               <input
                 type="email"
@@ -115,11 +126,13 @@ const AddService = () => {
 
             <div className="form-control">
               <label className="label">
-                <span className="label-text">Description</span>
+                <span className="label-text  text-[16px] font-medium">
+                  Description
+                </span>
               </label>
 
               <textarea
-                className="border"
+                className="border p-2 rounded-md"
                 name="Description"
                 placeholder="Enter You Description"
                 rows="4"

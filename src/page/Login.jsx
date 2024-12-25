@@ -3,42 +3,37 @@ import { Link, Navigate, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import AuthContext from '../context/AuthContext';
 import Swal from 'sweetalert2';
+import loginAnimation from '../../public/Animation - 2.json';
+import Lottie from 'lottie-react';
 const Login = () => {
   const { signUpwithpopup, singupWitthgoogle } = useContext(AuthContext);
-  const naveget = useNavigate()
-  const handealLogin = (e) => {
-    e.preventDefault()
+  const naveget = useNavigate();
+  const handealLogin = e => {
+    e.preventDefault();
     const email = e.target.email.value;
     const password = e.target.password.value;
-    const user = { email, password }
-    console.log(user)
+    const user = { email, password };
+    console.log(user);
 
-    singupWitthgoogle(email, password)
-      .then(result => {
-        naveget('/');
+    singupWitthgoogle(email, password).then(result => {
+      naveget('/');
       Swal.fire('Login successfully');
-    })
+    });
+  };
 
-  }
-
-   const handealPopup = () => {
-     signUpwithpopup().then(result => {
-       console.log(result.user);
-       naveget('/')
-       Swal.fire('Login successfully');
-     });
-   };
+  const handealPopup = () => {
+    signUpwithpopup().then(result => {
+      console.log(result.user);
+      naveget('/');
+      Swal.fire('Login successfully');
+    });
+  };
   return (
     <div>
-      <div className="hero bg-base-200">
-        <div className="hero-content flex-col lg:flex-row">
-          <div className="text-center lg:text-left">
-            <Link to={'/'}>
-            <h1 className="text-5xl font-bold">Login now!</h1>
-            </Link>
-            <p className="py-6">
-              Provident cupiditate voluptatem et in. Quaerat fugiat .
-            </p>
+      <div className="hero lg:bg-base-200">
+        <div className="hero-content flex-col gap-10 lg:gap-96 lg:flex-row">
+          <div className="">
+            <Lottie animationData={loginAnimation}></Lottie>
           </div>
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handealLogin} className="card-body">
