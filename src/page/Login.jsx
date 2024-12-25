@@ -13,7 +13,7 @@ const Login = () => {
     const email = e.target.email.value;
     const password = e.target.password.value;
     const user = { email, password };
-    console.log(user);
+    user;
 
     singupWitthgoogle(email, password).then(result => {
       naveget('/');
@@ -23,7 +23,7 @@ const Login = () => {
 
   const handealPopup = () => {
     signUpwithpopup().then(result => {
-      console.log(result.user);
+  
       naveget('/');
       Swal.fire('Login successfully');
     });

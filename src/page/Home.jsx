@@ -3,9 +3,8 @@ import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from './HomeCard';
 const Home = () => {
-  const service = useLoaderData()
-  console.log(service)
 
+  const service = useLoaderData();
 
   return (
     <div>
@@ -20,7 +19,3 @@ const Home = () => {
 };
 
 export default Home;
-
-
-
-

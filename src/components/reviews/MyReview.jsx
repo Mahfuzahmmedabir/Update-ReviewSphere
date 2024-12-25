@@ -12,7 +12,7 @@ const MyReview = () => {
       .get(`http://localhost:5000/review?email=${user?.email}`)
       .then(data => {
         setMyReview(data.data);
-        console.log(data.data);
+   
       });
   }, [user?.email]);
   return (

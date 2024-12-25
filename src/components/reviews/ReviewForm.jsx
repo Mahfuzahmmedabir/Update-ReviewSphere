@@ -7,12 +7,11 @@ import axios from 'axios';
 const ReviewForm = () => {
   const review = useLoaderData();
   const { user } = useContext(AuthContext);
-  const { _id, Description, category, Photourl, Price, ServiceTitle }
-    = review;
-  console.log(ServiceTitle);
-  
+  const { _id, Description, category, Photourl, Price, ServiceTitle } = review;
+  ServiceTitle;
+
   const [ratings, setRating] = useState(0);
-  console.log(ratings);
+  ratings;
   const handealSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -20,14 +19,11 @@ const ReviewForm = () => {
     const email = form.email.value;
     const reviewText = form.reviewText.value;
     const data = form.date.value;
-    const reviews = { name, email, reviewText, data,ServiceTitle , ratings };
-    console.log(reviews);
-
-
-    
+    const reviews = { name, email, reviewText, data, ServiceTitle, ratings };
+    reviews;
 
     axios.post('http://localhost:5000/review', reviews).then(data => {
-      console.log(data.data);
+      data.data;
     });
   };
 

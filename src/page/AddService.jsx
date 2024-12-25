@@ -12,9 +12,9 @@ const AddService = () => {
     e.preventDefault();
     const addService = new FormData(e.target);
     const service = Object.fromEntries(addService.entries());
-    console.log(service);
+    service;
     axios.post('http://localhost:5000/service', service).then(result => {
-      console.log(result);
+      result;
       // navegate('/');
     });
   };

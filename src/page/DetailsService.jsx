@@ -15,7 +15,7 @@ const DetailsService = () => {
       .then(res => res.json())
       .then(data => setReview(data))
       .catch(err => {
-        console.log(err);
+        err;
       });
   }, []);
 

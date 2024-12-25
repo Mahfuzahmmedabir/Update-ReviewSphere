@@ -4,11 +4,9 @@ import { Link } from 'react-router-dom';
 
 const HomeCard = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
-  
+
   const handealDelete = id => {
-    axios
-      .delete(`http://localhost:5000/service/${id}`)
-      .then(data => console.log(data.data));
+    axios.delete(`http://localhost:5000/service/${id}`).then(data => data.data);
     alert('delete');
   };
 

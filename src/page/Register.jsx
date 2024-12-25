@@ -36,7 +36,7 @@ const Register = () => {
     updeatProfile(name, photo)
       .then(() => {})
       .catch(err => {
-        console.log(err);
+        err;
       });
 
     setUser({ ...result.user, photoURL: photo, displayName: name });
@@ -44,7 +44,7 @@ const Register = () => {
 
   const handealPopup = () => {
     signUpwithpopup().then(result => {
-      console.log(result.user);
+      result.user;
       Swal.fire('Log In successfully');
       navigate('/');
     });

@@ -11,13 +11,12 @@ const MyService = () => {
       .get(`http://localhost:5000/service?email=${user?.email}`)
       .then(data => {
         setMyServiec(data.data);
-        console.log(data.data);
+        data.data;
       });
   }, [user?.email]);
   return (
     <div>
       <h2> hie {myServiec.length}</h2>
-
       <div>
         {myServiec.map(service => (
           <div key={service._id}>
@@ -37,7 +36,6 @@ const MyService = () => {
                     <th></th>
                   </tr>
                 </thead>
-
                 <tbody>
                   {/* row 1 */}
                   <tr>
@@ -50,10 +48,7 @@ const MyService = () => {
                       <div className="flex items-center gap-3">
                         <div className="avatar">
                           <div className="mask mask-squircle h-12 w-12">
-                            <img
-                              src="https://img.daisyui.com/images/profile/demo/2@94.webp"
-                              alt="Avatar Tailwind CSS Component"
-                            />
+                            <img src={user?.photoURL} />
                           </div>
                         </div>
                         <div>
