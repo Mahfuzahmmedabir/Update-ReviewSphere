@@ -33,7 +33,9 @@ const Login = () => {
       <div className="hero bg-base-200">
         <div className="hero-content flex-col lg:flex-row">
           <div className="text-center lg:text-left">
+            <Link to={'/'}>
             <h1 className="text-5xl font-bold">Login now!</h1>
+            </Link>
             <p className="py-6">
               Provident cupiditate voluptatem et in. Quaerat fugiat .
             </p>

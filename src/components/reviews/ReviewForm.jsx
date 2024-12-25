@@ -10,7 +10,6 @@ const ReviewForm = () => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = review;
   const [ratings, setRating] = useState(0);
   console.log(ratings);
-
   const handealSubmit = e => {
     e.preventDefault();
     const form = e.target;
@@ -79,7 +78,20 @@ const ReviewForm = () => {
               required
             />
           </div>
-
+          <div className="form-control">
+            <label className="label">
+              <span className="label-text text-xl font-semibold">
+                Date of experience
+              </span>
+            </label>
+            <input
+              type="date"
+              name="date"
+              placeholder="Date"
+              className="input input-bordered"
+              required
+            />
+          </div>
           <div className="">
             <label className="label">
               <span className=" text-xl font-bold">
@@ -96,20 +108,6 @@ const ReviewForm = () => {
             ></textarea>
           </div>
 
-          <div className="form-control">
-            <label className="label">
-              <span className="label-text text-xl font-semibold">
-                Date of experience
-              </span>
-            </label>
-            <input
-              type="date"
-              name="date"
-              placeholder="Date"
-              className="input input-bordered"
-              required
-            />
-          </div>
           <div className="form-control mt-6">
             <button className="btn btn-primary">Add Review</button>
           </div>
