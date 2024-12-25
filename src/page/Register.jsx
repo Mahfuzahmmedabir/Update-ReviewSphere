@@ -3,6 +3,8 @@ import AuthContext from '../context/AuthContext';
 import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Swal from 'sweetalert2';
+import Lottie from 'lottie-react';
+import LottiesAnimation from '../../public/Animation 1.json';
 const Register = () => {
   const {
     createuserWithEmailandPass,
@@ -21,28 +23,23 @@ const Register = () => {
     const password = form.password.value;
     const user = { name, email, photo, password };
 
-    if (password.length < 9) {
-      alert('usr');
-    }
+    // const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    // if (!regex.test(password)) {
+    //   return alert('no');
+    // }
 
-    createuserWithEmailandPass(email, password)
-      .then(result => {
-        Swal.fire('Register successfully');
+    createuserWithEmailandPass(email, password).then(result => {
+      Swal.fire('Register successfully');
       navigate('/');
     });
 
     updeatProfile(name, photo)
-      .then(() => {
-      
-      })
+      .then(() => {})
       .catch(err => {
-      console.log(err)
-    })
+        console.log(err);
+      });
 
     setUser({ ...result.user, photoURL: photo, displayName: name });
-
-
-
   };
 
   const handealPopup = () => {
@@ -54,17 +51,13 @@ const Register = () => {
   };
 
   return (
-    <div className="hero  bg-base-200 ">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center lg:text-left">
-          <h1 className="text-5xl font-bold">Login now!</h1>
-          <p className="py-6">
-            Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda
-            excepturi exercitationem quasi. In deleniti eaque aut repudiandae et
-            a id nisi.
-          </p>
+    <div className="hero  lg:bg-base-200 ">
+      <div className="hero-content  flex-col lg:flex-row ">
+        <div className="lg:w-96 md:w-96 lg:mr-56">
+          <Lottie animationData={LottiesAnimation}> </Lottie>
         </div>
-        <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
+
+        <div className="card bg-base-100 w-full max-w-sm shadow-2xl">
           <form onSubmit={handealRegister} className="card-body">
             <h2 className="text-center font-bold text-3xl">
               Create a free account

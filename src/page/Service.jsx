@@ -16,7 +16,7 @@ const Service = ({ service }) => {
         <div className="">
           <h2 className="card-title text-2xl">{ServiceTitle}</h2>
           <p>{Description}</p>
-          <p>Category: {category}</p>
+          <p >Category: {category}</p>
           <p className="text-gray-500 text-xl">Price ${Price}</p>
           <div className="card-actions justify-center">
             <Link to={`/seedetails/${_id}`} className="badge badge-outline">

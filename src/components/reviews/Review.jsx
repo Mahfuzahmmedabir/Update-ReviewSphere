@@ -4,7 +4,6 @@ import '@smastrom/react-rating/style.css';
 const Review = ({ review }) => {
   const { data, email, name, ratings, reviewText } = review;
   const [rating, setRating] = useState(ratings);
-
   return (
     <div className=" flex mt-6  justify-center">
       <div className=" w-6/12  rounded-md shadow-xl border  bg-slate-500 ">

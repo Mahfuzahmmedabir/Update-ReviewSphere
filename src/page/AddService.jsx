@@ -13,7 +13,7 @@ const AddService = () => {
     console.log(service);
     axios.post('http://localhost:5000/service', service).then(result => {
       console.log(result);
-      navegate('/');
+      // navegate('/');
     });
   };
   return (
