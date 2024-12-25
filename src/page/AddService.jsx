@@ -6,6 +6,8 @@ import { useNavigate } from 'react-router-dom';
 const AddService = () => {
   const { user } = useContext(AuthContext);
   const navegate = useNavigate()
+
+  
   const handealSubmit = e => {
     
     e.preventDefault();
@@ -17,11 +19,7 @@ const AddService = () => {
      .then(result => {
        console.log(result);
        navegate('/')
-
-    
     });
-
-    
   };
   return (
     <div className="hero bg-base-200 ">

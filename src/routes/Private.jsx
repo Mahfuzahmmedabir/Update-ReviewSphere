@@ -13,16 +13,11 @@ const Private = ({ children }) => {
     );
   }
   if (user && user?.email) {
-    return (
-      <>
-        {children}
-
-        <span className="loading loading-ring loading-lg"></span>
-      </>
-    );
+    return children
+     
   }
+  return navegate('/login')
 
-  return <>{navegate('/')}</>;
 };
 
 export default Private;

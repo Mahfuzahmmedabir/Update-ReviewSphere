@@ -2,11 +2,10 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const Service = ({ service }) => {
-  
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
   return (
     <div>
-      <div className=" p-8  rounded-2xl bg-slate-300 hover:shadow-xl">
+      <div className=" p-8  rounded-2xl max-w-80 bg-slate-300 hover:shadow-xl">
         <figure className="">
           <img
             className="w-52   rounded-2xl h-32 "
