@@ -113,6 +113,7 @@ const AddService = () => {
               <input
                 type="email"
                 placeholder="Email"
+                disabled={true}
                 name="email"
                 defaultValue={user?.email}
                 className="input input-bordered"

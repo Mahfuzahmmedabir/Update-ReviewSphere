@@ -29,6 +29,12 @@ const router = createBrowserRouter([
         ),
       },
       {
+        path: '/review/:id',
+        element: <ReviewForm></ReviewForm>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/service/${params.id}`),
+      },
+      {
         path: '/seedetails/:id',
         element: (
           <Private>
@@ -58,14 +64,6 @@ const router = createBrowserRouter([
     path: '/register',
     element: <Register></Register>,
   },
-  
-  {
-    path: '/review/:id',
-    element: <ReviewForm></ReviewForm>,
-    loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`),
-  },
-
-
 ]);
 
 export default router;
