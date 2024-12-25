@@ -7,7 +7,10 @@ import axios from 'axios';
 const ReviewForm = () => {
   const review = useLoaderData();
   const { user } = useContext(AuthContext);
-  const { _id, Description, category, Photourl, Price, ServiceTitle } = review;
+  const { _id, Description, category, Photourl, Price, ServiceTitle }
+    = review;
+  console.log(ServiceTitle);
+  
   const [ratings, setRating] = useState(0);
   console.log(ratings);
   const handealSubmit = e => {
@@ -17,9 +20,13 @@ const ReviewForm = () => {
     const email = form.email.value;
     const reviewText = form.reviewText.value;
     const data = form.date.value;
-    const review = { name, email, reviewText, data, ratings };
-    console.log(review);
-    axios.post('http://localhost:5000/review', review).then(data => {
+    const reviews = { name, email, reviewText, data,ServiceTitle , ratings };
+    console.log(reviews);
+
+
+    
+
+    axios.post('http://localhost:5000/review', reviews).then(data => {
       console.log(data.data);
     });
   };

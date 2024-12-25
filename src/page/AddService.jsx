@@ -5,20 +5,15 @@ import { useNavigate } from 'react-router-dom';
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
-  const navegate = useNavigate()
-
-  
+  const navegate = useNavigate();
   const handealSubmit = e => {
-    
     e.preventDefault();
     const addService = new FormData(e.target);
     const service = Object.fromEntries(addService.entries());
     console.log(service);
-
-    axios.post('http://localhost:5000/service', service)
-     .then(result => {
-       console.log(result);
-       navegate('/')
+    axios.post('http://localhost:5000/service', service).then(result => {
+      console.log(result);
+      navegate('/');
     });
   };
   return (
@@ -74,12 +69,10 @@ const AddService = () => {
               <label className="label">
                 <span className="label-text">Category</span>
               </label>
-
               <select className="border" name="category" id="">
                 <option value="saas">Healthcare</option>
                 <option value="saas">Hospitality and Tourism</option>
                 <option value="saas">e commerce</option>
-                
               </select>
             </div>
             <div className="form-control">
@@ -113,7 +106,6 @@ const AddService = () => {
               <input
                 type="email"
                 placeholder="Email"
-                disabled={true}
                 name="email"
                 defaultValue={user?.email}
                 className="input input-bordered"

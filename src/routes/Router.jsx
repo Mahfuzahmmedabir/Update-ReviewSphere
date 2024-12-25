@@ -9,6 +9,7 @@ import MyService from '../page/MyService';
 import Private from './Private';
 import Services from '../page/Services';
 import ReviewForm from '../components/reviews/ReviewForm';
+import MyReview from '../components/reviews/MyReview';
 
 const router = createBrowserRouter([
   {
@@ -44,6 +45,10 @@ const router = createBrowserRouter([
         path: '/serivec',
         element: <Services></Services>,
         loader: () => fetch('http://localhost:5000/service'),
+      },
+      {
+        path: '/myreviews',
+        element: <MyReview></MyReview>
       },
     ],
   },
