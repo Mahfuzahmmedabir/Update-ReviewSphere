@@ -5,10 +5,7 @@ import { Link } from 'react-router-dom';
 const HomeCard = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
 
-  const handealDelete = id => {
-    axios.delete(`http://localhost:5000/service/${id}`).then(data => data.data);
-    alert('delete');
-  };
+
 
   return (
     <div>
@@ -28,7 +25,7 @@ const HomeCard = ({ service }) => {
               See Details
             </Link>
 
-            <button onClick={() => handealDelete(_id)}>deldat</button>
+            
           </div>
         </div>
       </div>

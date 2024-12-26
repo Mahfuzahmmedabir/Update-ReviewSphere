@@ -1,9 +1,37 @@
 import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import Swal from 'sweetalert2';
 const MyReviews = ({ myReviews }) => {
-  const { ServiceTitle, reviewText, ratings } = myReviews;
+  const { ServiceTitle, reviewText, ratings, _id } = myReviews;
   const [rating, setRating] = useState();
+
+
+  const handealDelete = id => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/review/${id}`, {
+          method: 'Delete',
+        })
+          .then(res => res.json())
+          .then(data => {});
+
+        Swal.fire({
+          title: 'Deleted!',
+          text: 'Your file has been deleted.',
+          icon: 'success',
+        });
+      }
+    });
+  };
   return (
     <div>
       <div className=" w-full mt-8 rounded-2xl card-compact bg-base-100 shadow-xl">
@@ -24,7 +52,10 @@ const MyReviews = ({ myReviews }) => {
             <button className="border font-semibold hover:bg-gray-700 hover:text-white rounded-md px-3 py-2">
               Updeat
             </button>
-            <button className="border font-semibold  rounded-md px-4 py-2 hover:bg-red-600 hover:text-white ">
+            <button
+              onClick={() => handealDelete(_id)}
+              className="border font-semibold  rounded-md px-4 py-2 hover:bg-red-600 hover:text-white "
+            >
               Delete
             </button>
           </div>

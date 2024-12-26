@@ -2,6 +2,8 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import { RiDeleteBin6Line } from 'react-icons/ri';
+import { GrUpdate } from 'react-icons/gr';
+import Swal from 'sweetalert2';
 const MyService = () => {
   const { user } = useContext(AuthContext);
   const [myServiec, setMyServiec] = useState([]);
@@ -14,6 +16,33 @@ const MyService = () => {
         console.log(data.data);
       });
   }, [user?.email]);
+  
+  const handealDelete = id => {
+    Swal.fire({
+      title: 'Are you sure?',
+      text: "You won't be able to revert this!",
+      icon: 'warning',
+      showCancelButton: true,
+      confirmButtonColor: '#3085d6',
+      cancelButtonColor: '#d33',
+      confirmButtonText: 'Yes, delete it!',
+    }).then(result => {
+      if (result.isConfirmed) {
+        fetch(`http://localhost:5000/service/${id}`, {
+          method: 'Delete',
+        })
+          .then(res => res.json())
+          .then(data => {});
+
+        Swal.fire({
+          title: 'Deleted!',
+          text: 'Your file has been deleted.',
+          icon: 'success',
+        });
+      }
+    });
+  };
+
   return (
     <div>
       <h2> hie {myServiec.length}</h2>
@@ -27,7 +56,7 @@ const MyService = () => {
                   <tr>
                     <th className="w-3/12 text-xl">Company</th>
                     <th className="w-7/12 text-xl">Title</th>
-                    <th className="w-3/12 text-xl ">Updeat</th>
+                    <th className="w-3/12 text-xl ">Update</th>
                     <th className="w-3/12 text-xl">Delete</th>
                   </tr>
                 </thead>
@@ -77,10 +106,17 @@ date
                     {/* <td>Updeat</td> */}
 
                     <td>
-                      <button className="btn btn-ghost btn-xs">Updeat</button>
+                      <button className=" hover:btn ml-6 text-xl font-bold hover:text-xl ">
+                        <GrUpdate></GrUpdate>
+                      </button>
                     </td>
                     <td>
-                      <button className=" border py-2 px-3">Detele</button>
+                      <button
+                        onClick={() => handealDelete(service._id)}
+                        className=" text-red-700 ml-6 text-xl"
+                      >
+                        <RiDeleteBin6Line></RiDeleteBin6Line>
+                      </button>
                     </td>
                   </tr>
                 </tbody>
