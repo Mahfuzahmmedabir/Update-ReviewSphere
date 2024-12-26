@@ -94,7 +94,7 @@ const Navbar = () => {
                   <div className="flex flex-col">
                     <NavLink to={'/addservice'}>Add Service</NavLink>
                     <NavLink to={'/myservice'}> My Services</NavLink>
-                    <NavLink to={'/reviews'}>My Reviews</NavLink>
+                    <NavLink to={'/myreviews'}>My Reviews</NavLink>
                   </div>
 
                   <p className=" text-center">

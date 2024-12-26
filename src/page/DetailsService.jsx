@@ -35,7 +35,8 @@ const DetailsService = () => {
           </div>
         </div>
       </div>
-      <div className="bg-gray-700 p-4">
+      <div className=" bg-slate-200 p-4">
+        <h2 className='text-2xl text-center font-bold'>Recent reviews</h2>
         {review?.map(item => (
           <Review key={item._id} review={item}></Review>
         ))}

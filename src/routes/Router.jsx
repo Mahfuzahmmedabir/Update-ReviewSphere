@@ -10,6 +10,7 @@ import Private from './Private';
 import Services from '../page/Services';
 import ReviewForm from '../components/reviews/ReviewForm';
 import MyReview from '../components/reviews/MyReview';
+import UpdeatModal from '../page/UpdeatModal';
 
 const router = createBrowserRouter([
   {
@@ -48,8 +49,15 @@ const router = createBrowserRouter([
       },
       {
         path: '/myreviews',
-        element: <MyReview></MyReview>
+        element: <MyReview></MyReview>,
       },
+      // {
+      //   path: '/updeat/:id',
+      //   element: <UpdeatModal></UpdeatModal>,
+      //    loader: ({ params }) =>
+      //     fetch(`http://localhost:5000/service/${params.id}`),
+      
+      // },
     ],
   },
   {

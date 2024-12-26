@@ -4,10 +4,11 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GrUpdate } from 'react-icons/gr';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
-import { useNavigate } from 'react-router-dom';
-const DeleteAndUpdetService = ({ service }) => {
+import { Link,  useNavigate } from 'react-router-dom';
+// import UpdeatModal from './UpdeatModal';
+const DeleteAndUpdetService = ({ services }) => {
   const { user } = useContext(AuthContext);
-  console.log(service);
+  console.log(services);
   const {
     CompanyName,
     Description,
@@ -17,7 +18,8 @@ const DeleteAndUpdetService = ({ service }) => {
     category,
     date,
     _id
-  } = service;
+  } = services;
+  console.log(services)
   const navegate = useNavigate()
   const handealDelete = id => {
     Swal.fire({
@@ -46,6 +48,7 @@ const DeleteAndUpdetService = ({ service }) => {
   // updet
 
   const handealSubmit = (e) => {
+
     console.log(_id)
     e.preventDefault();
     const addService = new FormData(e.target);
@@ -61,6 +64,7 @@ const DeleteAndUpdetService = ({ service }) => {
 
       });
   };
+
   return (
     <div>
       <div className="overflow-x-auto">
@@ -95,7 +99,10 @@ const DeleteAndUpdetService = ({ service }) => {
                 {/* modal */}
                 {/* The button to open modal */}
                 <label htmlFor="my_modal_7" className="btn">
-                  <span className="  text-xl font-bold hover:text-xl ">
+                  {/* <UpdeatModal services={services}></UpdeatModal> */}
+                  <span
+                    className="  text-xl font-bold hover:text-xl "
+                  >
                     <GrUpdate></GrUpdate>
                   </span>
                 </label>

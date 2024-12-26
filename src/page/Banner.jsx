@@ -1,6 +1,6 @@
 import React from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
-import img1 from '../assets/img1.jpg';
+import img1 from '../assets/fullwidthslide2.jpg';
 import img2 from '../assets/img2.jpg';
 import img3 from '../assets/img3.jpg';
 import 'swiper/css';
@@ -19,7 +19,12 @@ const Banner = () => {
         className="mySwiper"
       >
         <SwiperSlide>
-          <SliedImg text={'hello world'} image={img1}></SliedImg>
+          <SliedImg
+            text={
+              'Welcome to the ReviewSphere – your one-stop destination for honest reviews and ratings. Find top services, share your experiences, and make informed choices with confidence'
+            }
+            image={img1}
+          ></SliedImg>
         </SwiperSlide>
 
         <SwiperSlide>
