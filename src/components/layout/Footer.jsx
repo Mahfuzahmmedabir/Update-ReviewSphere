@@ -31,7 +31,7 @@ const Footer = () => {
         </nav>
         {/* usefull link */}
         <nav>
-          <h6 className="font-bold footer  text-2xl text-white">Wstream</h6>
+          <h6 className="font-bold footer-title  ">Usefull Link </h6>
           <p className="text-xl lg:w-96">
             The best and most professional theme for to build a website about
             series and movies.
@@ -63,7 +63,7 @@ const Footer = () => {
       <footer className="footer footer-center bg-base-300 text-base-content p-4">
         <aside>
           <p className="font-semibold ">
-            Copyright © {new Date().getFullYear()} - All right reserved by ACME
+            Copyright © {new Date().getFullYear()} - All right reserved by Tech
             Industries Ltd
           </p>
         </aside>

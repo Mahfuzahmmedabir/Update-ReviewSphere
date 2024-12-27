@@ -5,6 +5,8 @@ import AuthContext from '../context/AuthContext';
 import Swal from 'sweetalert2';
 import loginAnimation from '../../public/Animation - 2.json';
 import Lottie from 'lottie-react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const Login = () => {
   const { signUpwithpopup, singupWitthgoogle } = useContext(AuthContext);
   const naveget = useNavigate();
@@ -14,6 +16,14 @@ const Login = () => {
     const password = e.target.password.value;
     const user = { email, password };
     user;
+ const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+ if (!passwordRegex.test(password)) {
+   toast(
+     'password at least 1 Lowercase at least 1 Uppercase,  at least 6 character'
+   );
+   <ToastContainer />;
+   return;
+ }
 
     singupWitthgoogle(email, password).then(result => {
       naveget('/');

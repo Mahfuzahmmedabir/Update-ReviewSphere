@@ -4,6 +4,7 @@ import axios from 'axios';
 import { useNavigate } from 'react-router-dom';
 import addServiceAnimation from '../../public/Animation - 1735165660947.json';
 import Lottie from 'lottie-react';
+import Swal from 'sweetalert2';
 
 const AddService = () => {
   const { user } = useContext(AuthContext);
@@ -15,6 +16,7 @@ const AddService = () => {
     service;
     axios.post('http://localhost:5000/service', service).then(result => {
       result;
+        Swal.fire(' add service successfully');
       navegate('/');
     });
   };
@@ -24,7 +26,6 @@ const AddService = () => {
         <div className="lg:w-6/12 ">
           <Lottie animationData={addServiceAnimation}></Lottie>
         </div>
-
         <div className=" lg:w-6/12 bg-slate-100 rounded-lg p-5 ">
           <form onSubmit={handealSubmit} className=" ">
             <div className="form-control">
@@ -151,3 +152,4 @@ const AddService = () => {
 };
 
 export default AddService;
+

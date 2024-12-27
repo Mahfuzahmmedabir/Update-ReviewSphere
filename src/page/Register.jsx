@@ -4,6 +4,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { FcGoogle } from 'react-icons/fc';
 import Swal from 'sweetalert2';
 import Lottie from 'lottie-react';
+import { toast, ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import LottiesAnimation from '../../public/Animation 1.json';
 const Register = () => {
   const {
@@ -22,16 +24,26 @@ const Register = () => {
     const photo = form.url.value;
     const password = form.password.value;
     const user = { name, email, photo, password };
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast(
+        'password at least 1 Lowercase at least 1 Uppercase,  at least 6 character'
+      );
+      <ToastContainer />;
+    
+      return;
+    }
 
-    // const regex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
-    // if (!regex.test(password)) {
-    //   return alert('no');
-    // }
-
-    createuserWithEmailandPass(email, password).then(result => {
-      Swal.fire('Register successfully');
+    createuserWithEmailandPass(email, password)
+    .then(result => {
       navigate('/');
-    });
+      console.log(result.user)
+      Swal.fire('Register successfully');
+    })
+      .catch(err => {
+      console.log(err)
+    })
+  
 
     updeatProfile(name, photo)
       .then(() => {})
