@@ -21,7 +21,7 @@ const navigate = useNavigate()
     const reviewText = form.reviewText.value;
     const data = form.date.value;
     const reviews =
-      { review_id: _id, name, email, reviewText, data, ServiceTitle, ratings };
+      { review_id: _id, Photourl:Photourl, name, email, reviewText, data, ServiceTitle, ratings };
     reviews;
     axios.post('http://localhost:5000/reviews', reviews).then(data => {
       data.data;

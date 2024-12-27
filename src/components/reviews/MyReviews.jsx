@@ -3,7 +3,8 @@ import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
 import Swal from 'sweetalert2';
 const MyReviews = ({ myReviews }) => {
-  const { ServiceTitle, reviewText, ratings, _id } = myReviews;
+  console.log(myReviews);
+  const { ServiceTitle, reviewText, ratings, _id, Photourl } = myReviews;
   const [rating, setRating] = useState();
 
   const handealDelete = id => {
@@ -22,7 +23,6 @@ const MyReviews = ({ myReviews }) => {
         })
           .then(res => res.json())
           .then(data => {});
-
         Swal.fire({
           title: 'Deleted!',
           text: 'Your file has been deleted.',
@@ -34,21 +34,23 @@ const MyReviews = ({ myReviews }) => {
   return (
     <div>
       <div className=" w-full mt-8 rounded-2xl card-compact bg-base-100 shadow-xl">
-        <div className="flex justify-between p-10">
-          <div className="">
-            
-            <h2 className="card-title">{ServiceTitle}</h2>
-            <p>{reviewText}</p>
-            <Rating
-              style={{ maxWidth: 130 }}
-              value={ratings}
-              isDisabled={true}
-              onChange={setRating}
-              required
-            />
+        <div className=" lg:flex justify-between p-10">
+          <div className=" lg:flex gap-10 justify-center items-center">
+            <img className="w-48" src={Photourl} alt="" />
+            <div>
+              <h2 className="card-title">{ServiceTitle}</h2>
+              <p>{reviewText}</p>
+              <Rating
+                style={{ maxWidth: 130 }}
+                value={ratings}
+                isDisabled={true}
+                onChange={setRating}
+                required
+              />
+            </div>
           </div>
 
-          <div className="card-actions flex flex-col justify-end">
+          <div className="card-actions flex lg:flex-col justify-end">
             <button className="border font-semibold hover:bg-gray-700 hover:text-white rounded-md px-3 py-2">
               Updeat
             </button>

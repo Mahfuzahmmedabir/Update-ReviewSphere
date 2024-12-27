@@ -23,7 +23,7 @@ ReviewSphere is a user-friendly Application designed to connect users with trust
 
 ## Technologies Used
 
-**Frontend:** React, TailwindCSS, daisyui 
+**Frontend:** React, TailwindCSS, daisyui, react countup 
 
 **Backend:** Node, Express
 
