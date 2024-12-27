@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css';
+import AuthContext from '../../context/AuthContext';
 const Review = ({ review }) => {
+  const { user } = useContext(AuthContext);
   const { data, email, name, ratings, reviewText } = review;
+
   const [rating, setRating] = useState(ratings);
   return (
     <div className=" flex mt-6  justify-center">
       <div className=" w-6/12  rounded-md shadow-xl border  bg-slate-500 ">
         <div className="card-body">
-          <h2 className="card-title text-white">{name}</h2>
+          <div className="flex gap-3">
+            <img className='w-8 rounded-full' src={user?.photoURL} alt="" />
+
+            <h2 className="card-title text-white">{name}</h2>
+          </div>
+
           <div className="border-b-2"></div>
+
           <div className="flex justify-start">
             <p className=" flex gap-2 items-center mt-2 text-gray-600">
               <Rating

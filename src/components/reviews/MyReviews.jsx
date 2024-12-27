@@ -6,7 +6,6 @@ const MyReviews = ({ myReviews }) => {
   const { ServiceTitle, reviewText, ratings, _id } = myReviews;
   const [rating, setRating] = useState();
 
-
   const handealDelete = id => {
     Swal.fire({
       title: 'Are you sure?',
@@ -37,6 +36,7 @@ const MyReviews = ({ myReviews }) => {
       <div className=" w-full mt-8 rounded-2xl card-compact bg-base-100 shadow-xl">
         <div className="flex justify-between p-10">
           <div className="">
+            
             <h2 className="card-title">{ServiceTitle}</h2>
             <p>{reviewText}</p>
             <Rating
