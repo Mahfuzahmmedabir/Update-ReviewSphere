@@ -19,13 +19,11 @@ const HomeCard = ({ service }) => {
           <p className="text-gray-500  mt-1">Price: ${Price}</p>
           <div className="card-actions mt-6   justify-center">
             <Link
-              to={`/seedetails/${_id}`}
+              to={`/Details/${_id}`}
               className="badge badge-outline font-semibold py-4 text-[16px]"
             >
               See Details
             </Link>
-
-            
           </div>
         </div>
       </div>

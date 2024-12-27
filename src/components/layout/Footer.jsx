@@ -4,9 +4,11 @@ import { FaFacebook } from 'react-icons/fa';
 import { RiTwitterXLine } from 'react-icons/ri';
 import { FaGithub } from 'react-icons/fa';
 import { IoLogoYoutube } from 'react-icons/io';
+
 const Footer = () => {
   return (
     <div>
+    
       <footer className=" lg:flex gap-8 bg-neutral text-neutral-content p-10">
         <nav className="lg:w-5/12">
           <h6 className="footer-title">Services</h6>

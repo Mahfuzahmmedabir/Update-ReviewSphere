@@ -12,13 +12,10 @@ const Service = ({ service }) => {
         <div className="">
           <h2 className="card-title text-2xl mt-2">{ServiceTitle}</h2>
           <p className="mt-2">{Description}</p>
-          <p className="mt-1">Category: {category}</p>
-          <p className="text-gray-500 mt-1 text-xl">Price ${Price}</p>
+          <p className="mt-1 text-[16px]">Category: {category}</p>
+          <p className="text-gray-500 mt-1 text-[16px]">Price ${Price}</p>
           <div className="card-actions mt-2 justify-center">
-            <Link
-              to={`/seedetails/${_id}`}
-              className="badge badge-outline py-4"
-            >
+            <Link to={`/Details/${_id}`} className="badge badge-outline py-4">
               See Details
             </Link>
           </div>

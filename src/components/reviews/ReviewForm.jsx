@@ -1,15 +1,16 @@
 import React, { useContext, useState } from 'react';
 import { Rating } from '@smastrom/react-rating';
-import { useLoaderData } from 'react-router-dom';
+import { useLoaderData, useNavigate } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 const ReviewForm = () => {
   const review = useLoaderData();
   const { user } = useContext(AuthContext);
   const { _id, Description, category, Photourl, Price, ServiceTitle } = review;
-  ServiceTitle;
-
+  console.log(review)
+const navigate = useNavigate()
   const [ratings, setRating] = useState(0);
   ratings;
   const handealSubmit = e => {
@@ -19,13 +20,18 @@ const ReviewForm = () => {
     const email = form.email.value;
     const reviewText = form.reviewText.value;
     const data = form.date.value;
-    const reviews = { name, email, reviewText, data, ServiceTitle, ratings };
+    const reviews =
+      { review_id: _id, name, email, reviewText, data, ServiceTitle, ratings };
     reviews;
-
-    axios.post('http://localhost:5000/review', reviews).then(data => {
+    axios.post('http://localhost:5000/reviews', reviews).then(data => {
       data.data;
+      console.log(data.data);
+      Swal.fire('Review add successfully');
+      navigate('/')
+
     });
   };
+
 
   return (
     <div className="m-10 text-center ">

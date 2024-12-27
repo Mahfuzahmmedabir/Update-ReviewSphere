@@ -4,6 +4,7 @@ import axios from 'axios';
 
 
 import DeleteAndUpdetService from './DeleteAndUpdetService';
+import { Helmet } from 'react-helmet';
 const MyService = () => {
   const { user } = useContext(AuthContext);
   const [myServiec, setMyServiec] = useState([]);
@@ -19,6 +20,9 @@ const MyService = () => {
   }, [user?.email]);
   return (
     <div>
+      <Helmet>
+        <title>ReviewSphere || MyService</title>
+      </Helmet>
       <h2>MyServie {myServiec.length}</h2>
       <div>
         {myServiec.map(service => (

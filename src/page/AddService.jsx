@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import addServiceAnimation from '../../public/Animation - 1735165660947.json';
 import Lottie from 'lottie-react';
 import Swal from 'sweetalert2';
-
+import { Helmet } from 'react-helmet-async';
 const AddService = () => {
   const { user } = useContext(AuthContext);
   const navegate = useNavigate();
@@ -22,6 +22,9 @@ const AddService = () => {
   };
   return (
     <div className="  ">
+      <Helmet>
+        <title>ReviewSphere || Add service</title>
+      </Helmet>
       <div className="hero-content flex-col gap-7 lg:gap-40   lg:flex-row">
         <div className="lg:w-6/12 ">
           <Lottie animationData={addServiceAnimation}></Lottie>

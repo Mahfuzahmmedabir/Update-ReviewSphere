@@ -7,6 +7,7 @@ import loginAnimation from '../../public/Animation - 2.json';
 import Lottie from 'lottie-react';
 import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { Helmet } from 'react-helmet';
 const Login = () => {
   const { signUpwithpopup, singupWitthgoogle } = useContext(AuthContext);
   const naveget = useNavigate();
@@ -40,6 +41,9 @@ const Login = () => {
   };
   return (
     <div>
+      <Helmet>
+        <title>ReviewSphere || Login</title>
+      </Helmet>
       <div className="hero lg:bg-base-200">
         <div className="hero-content flex-col gap-10 lg:gap-96 lg:flex-row">
           <div className="">
