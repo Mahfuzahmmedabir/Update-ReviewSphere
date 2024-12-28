@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import img3 from '../assets/fullwidthslide2.jpg';
 import img2 from '../assets/img2.jpg';
@@ -10,6 +10,7 @@ import SliedImg from './SliedImg';
 import CountUp from 'react-countup';
 
 const Banner = () => {
+  const [countup, setCountup] = useState(10);
   return (
     <div className="z-10">
       <Swiper
@@ -25,60 +26,52 @@ const Banner = () => {
               <div>
                 {/* text */}
                 <div>
-                  <h2 className="text-black">
-                    Welcome to the ReviewSphere – your one-stop destination for
-                    honest reviews and ratings
-                  </h2>
+                  <h2 className="text-black">Welcome to the ReviewSphere</h2>
                 </div>
-
-                <div className="flex justify-between mt-10">
+                <div className=" lg:flex justify-between gap-10 mt-10">
                   {/* countup 1 */}
-                  <div>
-                    <CountUp start={0} end={10}>
-                      {({ countUpRef, start }) => (
-                        <div className="flex text-orange-500 flex-col-reverse">
-                          <div className="flex flex-col   ">
-                            <div className="flex ">
-                              <span className="text-7xl" ref={countUpRef} />
-                              <p className="text-7xl">k+</p>
-                            </div>
-                            <p className="text-start ">Reviews</p>
-                          </div>
+                  <div className="text-[#efca08] ">
+                    <div className="flex  ">
+                      <CountUp
+                        className="text-7xl"
+                        delay={2}
+                        end={10}
+                      ></CountUp>
+                      <div className="flex  text-5xl   ">
+                        <div className="flex ">
+                          <p className="text-7xl">k+</p>
                         </div>
-                      )}
-                    </CountUp>
+                      </div>
+                    </div>
+                    <p className=" ">Reviews</p>
                   </div>
                   {/* countUp2 */}
-                  <div>
-                    <CountUp start={0} end={8}>
-                      {({ countUpRef, start }) => (
-                        <div className="flex flex-col-reverse">
-                          <div className="flex flex-col ">
-                            <div className="flex">
-                              <span className="text-7xl" ref={countUpRef} />
-                              <p className="text-7xl">k+</p>
-                            </div>
-                            <p className="text-start">Serviec</p>
-                          </div>
+                  <div className=" ">
+                    <div className="flex  ">
+                      <CountUp className="text-7xl" delay={2} end={8}></CountUp>
+                      <div className="flex  text-5xl   ">
+                        <div className="flex ">
+                          <p className="text-7xl">k+</p>
                         </div>
-                      )}
-                    </CountUp>
+                      </div>
+                    </div>
+                    <p className=" ">Service</p>
                   </div>
                   {/* countup 3 */}
-                  <div>
-                    <CountUp start={0} end={15}>
-                      {({ countUpRef, start }) => (
-                        <div className="flex flex-col-reverse">
-                          <div className="flex flex-col text-gray-900 ">
-                            <div className="flex">
-                              <span className="text-7xl" ref={countUpRef} />
-                              <p className="text-7xl">k+</p>
-                            </div>
-                            <p className="text-start">User</p>
-                          </div>
+                  <div className="text-gray-900 ">
+                    <div className="flex  ">
+                      <CountUp
+                        className="text-7xl"
+                        delay={2}
+                        end={15}
+                      ></CountUp>
+                      <div className="flex  text-5xl   ">
+                        <div className="flex ">
+                          <p className="text-7xl">k+</p>
                         </div>
-                      )}
-                    </CountUp>
+                      </div>
+                    </div>
+                    <p className=" ">User</p>
                   </div>
                 </div>
               </div>
@@ -90,13 +83,13 @@ const Banner = () => {
         <SwiperSlide>
           <SliedImg
             text={
-              'Welcome to the ReviewSphere – your one-stop destination for honest reviews and ratings. Find top services, share your experiences, and make informed choices with confidence'
+              'Welcome to the ReviewSphere – your one-stop destination for honest reviews and ratings.'
             }
             image={img2}
           ></SliedImg>
         </SwiperSlide>
         <SwiperSlide>
-          <SliedImg text={'hello world3'} image={img3}></SliedImg>
+          <SliedImg text={''} image={img3}></SliedImg>
         </SwiperSlide>
       </Swiper>
     </div>

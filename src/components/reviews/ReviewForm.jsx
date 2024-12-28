@@ -32,7 +32,6 @@ const navigate = useNavigate()
     });
   };
 
-
   return (
     <div className="m-10 text-center ">
       <div className="flex justify-center gap-4">

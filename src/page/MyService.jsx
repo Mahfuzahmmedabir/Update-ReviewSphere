@@ -2,13 +2,13 @@ import React, { useContext, useEffect, useState } from 'react';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 
-
 import DeleteAndUpdetService from './DeleteAndUpdetService';
+
 import { Helmet } from 'react-helmet';
 const MyService = () => {
   const { user } = useContext(AuthContext);
   const [myServiec, setMyServiec] = useState([]);
-  
+
   useEffect(() => {
     axios
       .get(`http://localhost:5000/service?email=${user?.email}`)
@@ -19,13 +19,15 @@ const MyService = () => {
       });
   }, [user?.email]);
 
-  
   return (
     <div>
       <Helmet>
         <title>ReviewSphere || MyService</title>
       </Helmet>
-      <h2>MyServie {myServiec.length}</h2>
+      <h2 className="text-2xl">
+        
+        My <span >service</span> {myServiec.length}
+      </h2>
       <div>
         {myServiec.map(service => (
           <DeleteAndUpdetService
@@ -39,7 +41,3 @@ const MyService = () => {
 };
 
 export default MyService;
-
- 
- 
-

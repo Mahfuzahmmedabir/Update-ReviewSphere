@@ -5,7 +5,7 @@ import { GrUpdate } from 'react-icons/gr';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
 import { Link,  useNavigate } from 'react-router-dom';
-// import UpdeatModal from './UpdeatModal';
+
 const DeleteAndUpdetService = ({ services }) => {
   const { user } = useContext(AuthContext);
   console.log(services);
@@ -46,9 +46,7 @@ const DeleteAndUpdetService = ({ services }) => {
     });
   };
   // updet
-
   const handealSubmit = (e) => {
-
     console.log(_id)
     e.preventDefault();
     const addService = new FormData(e.target);
@@ -64,7 +62,6 @@ const DeleteAndUpdetService = ({ services }) => {
 
       });
   };
-
   return (
     <div>
       <div className="overflow-x-auto">
