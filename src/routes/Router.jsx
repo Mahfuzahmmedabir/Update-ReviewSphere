@@ -10,7 +10,7 @@ import Private from './Private';
 import Services from '../page/Services';
 import ReviewForm from '../components/reviews/ReviewForm';
 import MyReview from '../components/reviews/MyReview';
-import UpdeatModal from '../page/UpdeatModal';
+
 
 const router = createBrowserRouter([
   {
@@ -20,7 +20,8 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>,
-        loader: () => fetch('http://localhost:5000/service'),
+        loader: () =>
+          fetch('https://review-sphere-server.vercel.app/service'),
       },
       {
         path: '/addservice',
@@ -34,7 +35,9 @@ const router = createBrowserRouter([
         path: '/review/:id',
         element: <ReviewForm></ReviewForm>,
         loader: ({ params }) =>
-          fetch(`http://localhost:5000/service/${params.id}`),
+          fetch(
+            `https://review-sphere-server.vercel.app/service/${params.id}`
+          ),
       },
 
       {
@@ -45,19 +48,14 @@ const router = createBrowserRouter([
       {
         path: '/serivec',
         element: <Services></Services>,
-        loader: () => fetch('http://localhost:5000/service'),
+        loader: () =>
+          fetch('https://review-sphere-server.vercel.app/service'),
       },
       {
         path: '/myreviews',
         element: <MyReview></MyReview>,
       },
-      // {
-      //   path: '/updeat/:id',
-      //   element: <UpdeatModal></UpdeatModal>,
-      //    loader: ({ params }) =>
-      //     fetch(`http://localhost:5000/service/${params.id}`),
-      
-      // },
+     
     ],
   },
   {
@@ -75,7 +73,10 @@ const router = createBrowserRouter([
         <DetailsService></DetailsService>
       </Private>
     ),
-    loader: ({ params }) => fetch(`http://localhost:5000/service/${params.id}`),
+    loader: ({ params }) =>
+      fetch(
+        `https://review-sphere-server.vercel.app/service/${params.id}`
+      ),
   },
 ]);
 

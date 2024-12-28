@@ -9,8 +9,8 @@ const ReviewForm = () => {
   const review = useLoaderData();
   const { user } = useContext(AuthContext);
   const { _id, Description, category, Photourl, Price, ServiceTitle } = review;
-  console.log(review)
-const navigate = useNavigate()
+  console.log(review);
+  const navigate = useNavigate();
   const [ratings, setRating] = useState(0);
   ratings;
   const handealSubmit = e => {
@@ -20,26 +20,35 @@ const navigate = useNavigate()
     const email = form.email.value;
     const reviewText = form.reviewText.value;
     const data = form.date.value;
-    const reviews =
-      { review_id: _id, Photourl:Photourl, name, email, reviewText, data, ServiceTitle, ratings };
+    const reviews = {
+      review_id: _id,
+      Photourl: Photourl,
+      name,
+      email,
+      reviewText,
+      data,
+      ServiceTitle,
+      ratings,
+    };
     reviews;
-    axios.post('http://localhost:5000/reviews', reviews).then(data => {
-      data.data;
-      console.log(data.data);
-      Swal.fire('Review add successfully');
-      navigate('/')
-
-    });
+    axios
+      .post('https://review-sphere-server.vercel.app/reviews', reviews)
+      .then(data => {
+        data.data;
+        console.log(data.data);
+        Swal.fire('Review add successfully');
+        navigate('/');
+      });
   };
 
   return (
-    <div className="m-10 text-center ">
+    <div className="lg:m-10 text-center ">
       <div className="flex justify-center gap-4">
         <img className="w-40" src={Photourl} alt="" />
         <h2 className="text-2xl">{ServiceTitle}</h2>
       </div>
       {/* Add Review */}
-      <div className=" lg:w-6/12 p-10  mx-auto mt-8    shrink-0 shadow-2xl">
+      <div className=" lg:w-6/12  p-10 rounded-2xl  mx-auto mt-8    lg:shrink-0 shadow-2xl">
         <form onSubmit={handealSubmit} className="">
           <div>
             <label className="label">

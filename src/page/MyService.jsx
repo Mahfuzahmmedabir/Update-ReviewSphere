@@ -11,7 +11,9 @@ const MyService = () => {
 
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/service?email=${user?.email}`)
+      .get(
+        `https://review-sphere-server.vercel.app/service?email=${user?.email}`
+      )
       .then(data => {
         setMyServiec(data.data);
         data.data;
@@ -25,8 +27,7 @@ const MyService = () => {
         <title>ReviewSphere || MyService</title>
       </Helmet>
       <h2 className="text-2xl">
-        
-        My <span >service</span> {myServiec.length}
+        My <span>service</span> {myServiec.length}
       </h2>
       <div>
         {myServiec.map(service => (

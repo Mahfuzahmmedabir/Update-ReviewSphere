@@ -35,15 +35,17 @@ const Register = () => {
     }
 
     createuserWithEmailandPass(email, password)
-    .then(result => {
-      navigate('/');
-      console.log(result.user)
-      Swal.fire('Register successfully');
-    })
-      .catch(err => {
-      console.log(err)
-    })
-  
+      .then(result => {
+        navigate('/');
+        console.log(result.user);
+        Swal.fire('Register successfully');
+      })
+      .catch(error => {
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        Swal.fire(`${errorMessage}`);
+        // ..
+      });
 
     updeatProfile(name, photo)
       .then(() => {})
@@ -63,7 +65,7 @@ const Register = () => {
   };
 
   return (
-    <div className="hero  lg:bg-base-200 ">
+    <div className=" lg:hero  lg:bg-base-200 ">
       <div className="hero-content  flex-col gap-10 lg:gap-64 lg:flex-row ">
         <div className="lg:w-96 md:w-96 ">
           <Lottie animationData={LottiesAnimation}> </Lottie>

@@ -14,11 +14,13 @@ const AddService = () => {
     const addService = new FormData(e.target);
     const service = Object.fromEntries(addService.entries());
     service;
-    axios.post('http://localhost:5000/service', service).then(result => {
-      result;
+    axios
+      .post('https://review-sphere-server.vercel.app/service', service)
+      .then(result => {
+        result;
         Swal.fire(' add service successfully');
-      navegate('/');
-    });
+        navegate('/');
+      });
   };
   return (
     <div className="  ">
@@ -155,4 +157,3 @@ const AddService = () => {
 };
 
 export default AddService;
-

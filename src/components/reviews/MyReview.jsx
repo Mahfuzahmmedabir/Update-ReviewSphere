@@ -9,7 +9,9 @@ const MyReview = () => {
   const [myReview, setMyReview] = useState([]);
   useEffect(() => {
     axios
-      .get(`http://localhost:5000/review?email=${user?.email}`)
+      .get(
+        `http://https://review-sphere-server.vercel.app/review?email=${user?.email}`
+      )
       .then(data => {
         setMyReview(data.data);
       });

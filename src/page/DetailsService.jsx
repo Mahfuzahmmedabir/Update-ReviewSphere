@@ -7,14 +7,16 @@ import { Helmet } from 'react-helmet';
 
 const DetailsService = () => {
   const [review, setReview] = useState([]);
-  console.log(review)
+  console.log(review);
 
   const details = useLoaderData();
-  console.log(details)
+  console.log(details);
   const { _id, Description, category, Photourl, Price, ServiceTitle } = details;
 
   useEffect(() => {
-    fetch(`http://localhost:5000/service/reviews/${_id}`)
+    fetch(
+      `https://review-sphere-server.vercel.app/service/reviews/${_id}`
+    )
       .then(res => res.json())
       .then(data => setReview(data))
       .catch(err => {

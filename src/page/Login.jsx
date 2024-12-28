@@ -17,24 +17,30 @@ const Login = () => {
     const password = e.target.password.value;
     const user = { email, password };
     user;
- const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
- if (!passwordRegex.test(password)) {
-   toast(
-     'password at least 1 Lowercase at least 1 Uppercase,  at least 6 character'
-   );
-   <ToastContainer />;
-   return;
- }
+    const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z]).{6,}$/;
+    if (!passwordRegex.test(password)) {
+      toast(
+        'password at least 1 Lowercase at least 1 Uppercase,  at least 6 character'
+      );
+      <ToastContainer />;
+      return;
+    }
 
-    singupWitthgoogle(email, password).then(result => {
+    singupWitthgoogle(email, password)
+      .then(result => {
       naveget('/');
       Swal.fire('Login successfully');
-    });
+      })
+      .catch(error => {
+            const errorCode = error.code;
+            const errorMessage = error.message;
+            Swal.fire(`${errorMessage}`);
+            // ..
+          });
   };
 
   const handealPopup = () => {
     signUpwithpopup().then(result => {
-  
       naveget('/');
       Swal.fire('Login successfully');
     });

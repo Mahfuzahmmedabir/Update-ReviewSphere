@@ -28,10 +28,10 @@ const Banner = () => {
                 <div>
                   <h2 className="text-black">Welcome to the ReviewSphere</h2>
                 </div>
-                <div className=" lg:flex justify-between gap-10 mt-10">
+                <div className=" lg:flex lg:justify-between gap-10 mt-10  ">
                   {/* countup 1 */}
-                  <div className="text-[#efca08] ">
-                    <div className="flex  ">
+                  <div className="text-[#efca08]  ">
+                    <div className="flex justify-center  ">
                       <CountUp
                         className="text-7xl"
                         delay={2}
@@ -47,7 +47,7 @@ const Banner = () => {
                   </div>
                   {/* countUp2 */}
                   <div className=" ">
-                    <div className="flex  ">
+                    <div className="flex justify-center  ">
                       <CountUp className="text-7xl" delay={2} end={8}></CountUp>
                       <div className="flex  text-5xl   ">
                         <div className="flex ">
@@ -58,10 +58,10 @@ const Banner = () => {
                     <p className=" ">Service</p>
                   </div>
                   {/* countup 3 */}
-                  <div className="text-gray-900 ">
-                    <div className="flex  ">
+                  <div className="lg:text-slate-950 text-white  ">
+                    <div className="flex justify-center">
                       <CountUp
-                        className="text-7xl"
+                        className="text-7xl "
                         delay={2}
                         end={15}
                       ></CountUp>
@@ -71,7 +71,7 @@ const Banner = () => {
                         </div>
                       </div>
                     </div>
-                    <p className=" ">User</p>
+                    <p className="">User</p>
                   </div>
                 </div>
               </div>

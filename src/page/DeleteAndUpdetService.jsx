@@ -4,7 +4,7 @@ import { RiDeleteBin6Line } from 'react-icons/ri';
 import { GrUpdate } from 'react-icons/gr';
 import AuthContext from '../context/AuthContext';
 import axios from 'axios';
-import { Link,  useNavigate } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const DeleteAndUpdetService = ({ services }) => {
   const { user } = useContext(AuthContext);
@@ -17,10 +17,10 @@ const DeleteAndUpdetService = ({ services }) => {
     Price,
     category,
     date,
-    _id
+    _id,
   } = services;
-  console.log(services)
-  const navegate = useNavigate()
+  console.log(services);
+  const navegate = useNavigate();
   const handealDelete = id => {
     Swal.fire({
       title: 'Are you sure?',
@@ -32,7 +32,7 @@ const DeleteAndUpdetService = ({ services }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://localhost:5000/service/${id}`, {
+        fetch(`https://review-sphere-server.vercel.app/service/${id}`, {
           method: 'Delete',
         })
           .then(res => res.json())
@@ -46,20 +46,22 @@ const DeleteAndUpdetService = ({ services }) => {
     });
   };
   // updet
-  const handealSubmit = (e) => {
-    console.log(_id)
+  const handealSubmit = e => {
+    console.log(_id);
     e.preventDefault();
     const addService = new FormData(e.target);
     const service = Object.fromEntries(addService.entries());
     service;
     console.log(service);
     axios
-      .put(`http://localhost:5000/service/${_id}`, service)
+      .put(
+        `https://review-sphere-server.vercel.app/service/${_id}`,
+        service
+      )
       .then(result => {
         result;
         navegate('/');
         Swal.fire('Update successful');
-
       });
   };
   return (
@@ -97,9 +99,7 @@ const DeleteAndUpdetService = ({ services }) => {
                 {/* The button to open modal */}
                 <label htmlFor="my_modal_7" className="btn">
                   {/* <UpdeatModal services={services}></UpdeatModal> */}
-                  <span
-                    className="  text-xl font-bold hover:text-xl "
-                  >
+                  <span className="  text-xl font-bold hover:text-xl ">
                     <GrUpdate></GrUpdate>
                   </span>
                 </label>
