@@ -26,7 +26,10 @@ const Banner = () => {
               <div>
                 {/* text */}
                 <div>
-                  <h2 className="text-black">Welcome to the ReviewSphere</h2>
+                  <h2 className="text-black">
+                    Welcome to the{' '}
+                    <span className="text-orange-500">ReviewSphere</span>
+                  </h2>
                 </div>
                 <div className=" lg:flex lg:justify-between gap-10 mt-10  ">
                   {/* countup 1 */}
@@ -43,7 +46,7 @@ const Banner = () => {
                         </div>
                       </div>
                     </div>
-                    <p className=" ">Reviews</p>
+                    <p className="">Reviews</p>
                   </div>
                   {/* countUp2 */}
                   <div className=" ">
@@ -65,7 +68,7 @@ const Banner = () => {
                         delay={2}
                         end={15}
                       ></CountUp>
-                      <div className="flex  text-5xl   ">
+                      <div className="flex">
                         <div className="flex ">
                           <p className="text-7xl">k+</p>
                         </div>

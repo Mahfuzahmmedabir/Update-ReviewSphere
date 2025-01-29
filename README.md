@@ -36,6 +36,6 @@ ReviewSphere is a user-friendly Application designed to connect users with trust
 
 ## Acknowledgements
 
- - [Awesome Readme Templates](https://awesomeopensource.com/project/elangosundar/awesome-README-templates)
+ - [Live Link](https://whimsical-seahorse-18aad8.netlify.app/)
 
 

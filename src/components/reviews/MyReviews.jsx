@@ -18,7 +18,7 @@ const MyReviews = ({ myReviews }) => {
       confirmButtonText: 'Yes, delete it!',
     }).then(result => {
       if (result.isConfirmed) {
-        fetch(`http://https://review-sphere-server.vercel.app/review/${id}`, {
+        fetch(`https://review-sphere-server.vercel.app/review/${id}`, {
           method: 'Delete',
         })
           .then(res => res.json())
@@ -38,7 +38,7 @@ const MyReviews = ({ myReviews }) => {
           <div className=" lg:flex gap-10 justify-center items-center">
             <img className="w-48" src={Photourl} alt="" />
             <div>
-              <h2 className="card-title">{ServiceTitle}</h2>
+              <h2 className="card-title mt-10">{ServiceTitle}</h2>
               <p>{reviewText}</p>
               <Rating
                 style={{ maxWidth: 130 }}
@@ -50,7 +50,7 @@ const MyReviews = ({ myReviews }) => {
             </div>
           </div>
 
-          <div className="card-actions flex lg:flex-col justify-end">
+          <div className="card-actions flex lg:flex-col lg:justify-end justify-center mt-7">
             <button className="border font-semibold hover:bg-gray-700 hover:text-white rounded-md px-3 py-2">
               Updeat
             </button>

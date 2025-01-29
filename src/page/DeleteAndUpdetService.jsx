@@ -35,8 +35,10 @@ const DeleteAndUpdetService = ({ services }) => {
         fetch(`https://review-sphere-server.vercel.app/service/${id}`, {
           method: 'Delete',
         })
+          
           .then(res => res.json())
           .then(data => {});
+        
         Swal.fire({
           title: 'Deleted!',
           text: 'Your file has been deleted.',

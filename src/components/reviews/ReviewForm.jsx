@@ -74,7 +74,7 @@ const ReviewForm = () => {
             <input
               type="text"
               name="name"
-              disabled={true}
+             readOnly
               placeholder="Name"
               defaultValue={user?.displayName}
               className="input input-bordered"
@@ -86,10 +86,11 @@ const ReviewForm = () => {
               <span className="label-text text-xl font-semibold">Email</span>
             </label>
             <input
+              readOnly
               type="email"
               name="email"
               defaultValue={user?.email}
-              disabled={true}
+              
               placeholder="Email"
               className="input input-bordered"
               required
@@ -111,13 +112,13 @@ const ReviewForm = () => {
           </div>
           <div className="">
             <label className="label">
-              <span className=" text-xl font-bold">
+              <span className="  text-xl font-bold">
                 Tell us more about your experience
               </span>
             </label>
             <label for="reviewText"></label>
             <textarea
-              className="border w-full "
+              className="border w-full p-3 rounded-xl "
               placeholder="Tell us more about your experience."
               id="w3review"
               name="reviewText"

@@ -10,7 +10,7 @@ const MyReview = () => {
   useEffect(() => {
     axios
       .get(
-        `http://https://review-sphere-server.vercel.app/review?email=${user?.email}`
+        `https://review-sphere-server.vercel.app/review?email=${user?.email}`
       )
       .then(data => {
         setMyReview(data.data);
@@ -21,7 +21,7 @@ const MyReview = () => {
       <Helmet>
         <title>ReviewSphere || MyReview</title>
       </Helmet>
-      <div className="p-10">
+      <div className="lg:p-10">
         {myReview?.map(items => (
           <MyReviews key={items._id} myReviews={items}></MyReviews>
         ))}
