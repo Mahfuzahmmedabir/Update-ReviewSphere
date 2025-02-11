@@ -28,7 +28,7 @@ const Banner = () => {
                 <div>
                   <h2 className="text-black">
                     Welcome to the{' '}
-                    <span className="text-orange-500">ReviewSphere</span>
+                    <span className="text-[#efca08]">ReviewSphere</span>
                   </h2>
                 </div>
                 <div className=" lg:flex lg:justify-between gap-10 mt-10  ">
@@ -82,17 +82,29 @@ const Banner = () => {
             image={img1}
           ></SliedImg>
         </SwiperSlide>
-
         <SwiperSlide>
           <SliedImg
             text={
-              'Welcome to the ReviewSphere – your one-stop destination for honest reviews and ratings.'
+              <p className=" bg-opacity-60 lg:w-[1000px]">
+                Your opinion matters! Share your experiences, explore authentic
+                insights, and help others make better choices. Join ReviewSphere
+                and be a part of a transparent and informed community.
+              </p>
             }
             image={img2}
           ></SliedImg>
         </SwiperSlide>
         <SwiperSlide>
-          <SliedImg text={''} image={img3}></SliedImg>
+          <SliedImg
+            text={
+              <p className="lg:w-[1000px]">
+                Share your experiences, explore honest reviews, and make
+                informed decisions. ReviewSphere empowers you to voice your
+                opinions and influence the community with real insights.
+              </p>
+            }
+            image={img3}
+          ></SliedImg>
         </SwiperSlide>
       </Swiper>
     </div>

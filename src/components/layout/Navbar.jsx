@@ -24,9 +24,8 @@ const Navbar = () => {
       Swal.fire('Log Out successfully');
     });
   };
-
   return (
-    <div className="navbar  bg-base-100">
+    <div className="navbar sticky top-0 z-50  bg-base-100">
       <div className="navbar-start z-50">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -52,7 +51,7 @@ const Navbar = () => {
             {links}
           </ul>
         </div>
-        <a className="btn btn-ghost text-xl">ReviewSphere</a>
+        <a className="btn btn-ghost text-xl font-extrabold">ReviewSphere</a>
       </div>
       <div className="navbar-center hidden  lg:flex">
         <ul className="menu menu-horizontal font-semibold text-[16px] flex gap-4 px-1">

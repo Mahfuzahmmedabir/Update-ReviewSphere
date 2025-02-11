@@ -11,7 +11,6 @@ import AuthContext from './AuthContext';
 import auth from '../firebase/firebase.init';
 import { useEffect, useState } from 'react';
 const provider = new GoogleAuthProvider();
-
 const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);
   const [lodging, setLodging] = useState(true);
@@ -19,7 +18,6 @@ const AuthProvider = ({ children }) => {
     setLodging(true);
     return createUserWithEmailAndPassword(auth, email, password);
   };
-
   const signUpwithpopup = () => {
     setLodging(true);
     return signInWithPopup(auth, provider);
@@ -37,7 +35,6 @@ const AuthProvider = ({ children }) => {
       photoURL: photo,
     });
   };
-
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, current => {
       setLodging(false)
@@ -47,7 +44,6 @@ const AuthProvider = ({ children }) => {
       };
     });
   }, []);
-
   const authIfo = {
     createuserWithEmailandPass,
     signUpwithpopup,

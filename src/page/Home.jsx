@@ -2,6 +2,8 @@ import React from 'react';
 import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from './HomeCard';
+import HowItWorks from './HowIt\'sWork/Work';
+import TrendingLatestReviews from './TrendingLatestReviews/TrendingLatestReviews';
 const Home = () => {
 
   const service = useLoaderData();
@@ -14,6 +16,9 @@ const Home = () => {
           <HomeCard key={service._id} service={service}></HomeCard>
         ))}
       </div>
+      <HowItWorks></HowItWorks>
+      <TrendingLatestReviews></TrendingLatestReviews>
+    
     </div>
   );
 };

@@ -28,15 +28,15 @@ const Login = () => {
 
     singupWitthgoogle(email, password)
       .then(result => {
-      naveget('/');
-      Swal.fire('Login successfully');
+        naveget('/');
+        Swal.fire('Login successfully');
       })
       .catch(error => {
-            const errorCode = error.code;
-            const errorMessage = error.message;
-            Swal.fire(`${errorMessage}`);
-            // ..
-          });
+        const errorCode = error.code;
+        const errorMessage = error.message;
+        Swal.fire(`${errorMessage}`);
+        // ..
+      });
   };
 
   const handealPopup = () => {
@@ -55,7 +55,7 @@ const Login = () => {
           <div className="">
             <Lottie animationData={loginAnimation}></Lottie>
           </div>
-          
+
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handealLogin} className="card-body">
               <h2 className="text-center text-3xl">Login </h2>
@@ -103,7 +103,6 @@ const Login = () => {
               <div className="form-control mt-6">
                 <button className="btn btn-primary">Login</button>
               </div>
-
               <p className="text-center">
                 Don't have an account?{' '}
                 <Link className="text-green-500" to={'/register'}>
