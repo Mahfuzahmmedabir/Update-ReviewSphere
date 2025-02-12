@@ -1,12 +1,19 @@
-import axios from 'axios';
-import React from 'react';
+
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
+import React, { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 const HomeCard = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
 
+    // useEffect(() => {
+    //   AOS.init({ duration: 1000 });
+    // }, []);
+  
+  
   return (
-    <div className="flex flex-1">
+    <div  className="flex flex-1">
       <div className="p-3 rounded-2xl  border hover:shadow-xl">
         <figure className="">
           <img className="w-52  rounded-2xl h-32 " src={Photourl} alt="Shoes" />

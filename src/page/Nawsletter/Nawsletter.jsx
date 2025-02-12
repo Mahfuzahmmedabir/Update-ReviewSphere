@@ -1,11 +1,6 @@
  import React from 'react';
 import { FaEnvelope } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
 const Newsletter = () => {
-    React.useEffect(() => {
-      AOS.init({ duration: 1000 });
-    }, []);
   return (
     <section className="py-12 bg-gray-300">
       {/* Section Header */}
@@ -21,7 +16,7 @@ const Newsletter = () => {
       <div className="flex flex-col items-center justify-center">
         <div
           className="bg-white p-6 rounded-2xl shadow-lg max-w-xl w-full"
-          data-aos="zoom-in"
+   
         >
           <div className="flex flex-col md:flex-row gap-4">
             <input

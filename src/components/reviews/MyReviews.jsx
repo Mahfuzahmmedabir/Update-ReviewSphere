@@ -43,13 +43,12 @@ const MyReviews = ({ myReviews }) => {
               <Rating
                 style={{ maxWidth: 130 }}
                 value={ratings}
-                isDisabled={true}
+                disabled
                 onChange={setRating}
                 required
               />
             </div>
           </div>
-
           <div className="card-actions flex lg:flex-col lg:justify-end justify-center mt-7">
             <button className="border font-semibold hover:bg-gray-700 hover:text-white rounded-md px-3 py-2">
               Updeat

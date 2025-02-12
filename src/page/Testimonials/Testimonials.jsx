@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { FaUsers, FaQuoteLeft } from 'react-icons/fa';
-import AOS from 'aos';
-import 'aos/dist/aos.css';
+// import AOS from 'aos';
+// import 'aos/dist/aos.css';
 
 const testimonials = [
   {
@@ -22,15 +22,14 @@ const testimonials = [
     name: 'Michael Lee',
     review:
       'Love being part of this amazing community. Great insights and genuine reviews!',
-    image:
-      'https://i.ibb.co.com/PZVWkPdT/pexels-maksgelatin-5486199.jpg',
+    image: 'https://i.ibb.co.com/PZVWkPdT/pexels-maksgelatin-5486199.jpg',
   },
 ];
 
 const Testimonials = () => {
-  useEffect(() => {
-    AOS.init({ duration: 1000 });
-  }, []);
+  // useEffect(() => {
+  //   AOS.init({ duration: 1000 });
+  // }, []);
 
   const [currentIndex, setCurrentIndex] = useState(0);
 
@@ -40,13 +39,12 @@ const Testimonials = () => {
     }, 3000);
 
     return () => clearInterval(interval);
-
   }, []);
 
   return (
     <section className="py-12 bg-gray-100">
       {/* Section Header */}
-      <div className="max-w-5xl mx-auto text-center" data-aos="fade-up">
+      <div className="max-w-5xl mx-auto text-center">
         <FaUsers className="text-blue-500 text-5xl mb-4" />
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           Community & User Testimonials
@@ -60,7 +58,7 @@ const Testimonials = () => {
       <div className="flex justify-center items-center px-4 relative">
         <div
           className="flex flex-col items-center w-96 p-6 bg-white rounded-2xl shadow-lg"
-          data-aos="fade-up"
+         
         >
           <img
             src={testimonials[currentIndex].image}

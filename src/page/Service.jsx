@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 const Service = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
   return (
-    <div>
+    <div className="flex flex-1">
+     
       <div className=" p-3 lg:p-3 rounded-2xl max-w-80 border hover:shadow-xl">
         <figure className="">
           <img className="w-52 rounded-2xl h-32 " src={Photourl} alt="Shoes" />

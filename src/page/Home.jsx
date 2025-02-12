@@ -18,8 +18,8 @@ const Home = () => {
           <HomeCard key={service._id} service={service}></HomeCard>
         ))}
       </div>
-      <HowItWorks></HowItWorks>
       <TrendingLatestReviews></TrendingLatestReviews>
+      <HowItWorks></HowItWorks>
       <Testimonials></Testimonials>
       <Newsletter></Newsletter>
     
