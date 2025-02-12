@@ -48,7 +48,7 @@ const HowItWorks = () => {
       {/* CTA Section */}
       <div className="text-center mt-12">
         <a
-          href="/get-started"
+          href=""
           className="bg-blue-600 text-white px-6 py-3 rounded-lg text-lg font-semibold hover:bg-blue-700 transition"
         >
           Get Started Now

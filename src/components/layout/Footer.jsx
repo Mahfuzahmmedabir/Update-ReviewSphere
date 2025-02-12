@@ -8,11 +8,10 @@ import { IoLogoYoutube } from 'react-icons/io';
 const Footer = () => {
   return (
     <div>
-    
       <footer className=" lg:flex gap-8 bg-neutral text-neutral-content p-10">
         <nav className="lg:w-5/12">
           <h6 className="footer-title">Services</h6>
-          <p className=" font-semibold text-[16px]">
+          <p className=" text-[16px]">
             The Service Review Application System is a user-friendly platform
             designed to connect users with trusted reviews of various services.
             It empowers individuals to share their experiences, rate services,
@@ -34,12 +33,11 @@ const Footer = () => {
         {/* usefull link */}
         <nav>
           <h6 className="font-bold footer-title  ">Usefull Link </h6>
-          <p className="text-xl lg:w-96">
+          <p className=" lg:w-96">
             The best and most professional theme for to build a website about
             series and movies.
           </p>
-
-          <div className=" flex gap-5">
+          <div className=" flex gap-5 mt-3">
             <Link
               to={'https://www.facebook.com/'}
               className="text-2xl bg-slate-700 rounded-md font-bold text-slate-100 py-2 px-3 hover:bg-[#316FF6]"

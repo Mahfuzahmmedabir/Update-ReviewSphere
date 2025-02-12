@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from 'react';
 import { FaUsers, FaQuoteLeft } from 'react-icons/fa';
-// import AOS from 'aos';
-// import 'aos/dist/aos.css';
 
 const testimonials = [
   {
@@ -27,10 +25,6 @@ const testimonials = [
 ];
 
 const Testimonials = () => {
-  // useEffect(() => {
-  //   AOS.init({ duration: 1000 });
-  // }, []);
-
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -42,10 +36,9 @@ const Testimonials = () => {
   }, []);
 
   return (
-    <section className="py-12 bg-gray-100">
+    <section className="py-12 bg-gray-300">
       {/* Section Header */}
       <div className="max-w-5xl mx-auto text-center">
-        <FaUsers className="text-blue-500 text-5xl mb-4" />
         <h2 className="text-4xl font-bold text-gray-800 mb-4">
           Community & User Testimonials
         </h2>
@@ -56,10 +49,7 @@ const Testimonials = () => {
 
       {/* Testimonials Auto Slider */}
       <div className="flex justify-center items-center px-4 relative">
-        <div
-          className="flex flex-col items-center w-96 p-6 bg-white rounded-2xl shadow-lg"
-         
-        >
+        <div className="flex flex-col items-center w-96 p-6 bg-white rounded-2xl shadow-lg">
           <img
             src={testimonials[currentIndex].image}
             alt={testimonials[currentIndex].name}

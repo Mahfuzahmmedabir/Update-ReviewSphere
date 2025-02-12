@@ -4,7 +4,6 @@ import { Navigate, useNavigate } from 'react-router-dom';
 
 const Private = ({ children }) => {
   const { user, lodging } = useContext(AuthContext);
-  const navegate = useNavigate();
   if (lodging) {
     return (
       <div className="text-center">
@@ -13,11 +12,9 @@ const Private = ({ children }) => {
     );
   }
   if (user && user?.email) {
-    return children
-     
+    return children;
   }
-  return <Navigate to={'/login'}></Navigate>
-
+  return <Navigate to={'/login'}></Navigate>;
 };
 
 export default Private;

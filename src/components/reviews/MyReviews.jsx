@@ -6,7 +6,6 @@ const MyReviews = ({ myReviews }) => {
   console.log(myReviews);
   const { ServiceTitle, reviewText, ratings, _id, Photourl } = myReviews;
   const [rating, setRating] = useState();
-
   const handealDelete = id => {
     Swal.fire({
       title: 'Are you sure?',

@@ -10,13 +10,14 @@ import Private from './Private';
 import Services from '../page/Services';
 import ReviewForm from '../components/reviews/ReviewForm';
 import MyReview from '../components/reviews/MyReview';
+import NotFound from '../page/NotFound/NotFound';
 
 
 const router = createBrowserRouter([
   {
     path: '/',
     element: <Main></Main>,
-    errorElement:<h2>Not found page 404</h2>,
+    errorElement:<NotFound></NotFound>,
     children: [
       {
         path: '/',

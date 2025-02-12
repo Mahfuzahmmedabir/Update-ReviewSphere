@@ -2,14 +2,13 @@ import React from 'react';
 import Banner from './Banner';
 import { useLoaderData } from 'react-router-dom';
 import HomeCard from './HomeCard';
-import HowItWorks from './HowIt\'sWork/Work';
+import HowItWorks from "./HowIt'sWork/Work";
 import TrendingLatestReviews from './TrendingLatestReviews/TrendingLatestReviews';
 import Newsletter from './Nawsletter/Nawsletter';
 import Testimonials from './Testimonials/Testimonials';
+
 const Home = () => {
-
   const service = useLoaderData();
-
   return (
     <div>
       <Banner></Banner>
@@ -22,13 +21,8 @@ const Home = () => {
       <HowItWorks></HowItWorks>
       <Testimonials></Testimonials>
       <Newsletter></Newsletter>
-    
     </div>
   );
 };
 
 export default Home;
-
-
-
-   
