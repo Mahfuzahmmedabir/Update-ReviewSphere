@@ -4,6 +4,8 @@ import { useLoaderData } from 'react-router-dom';
 import HomeCard from './HomeCard';
 import HowItWorks from './HowIt\'sWork/Work';
 import TrendingLatestReviews from './TrendingLatestReviews/TrendingLatestReviews';
+import Newsletter from './Nawsletter/Nawsletter';
+import Testimonials from './Testimonials/Testimonials';
 const Home = () => {
 
   const service = useLoaderData();
@@ -18,6 +20,8 @@ const Home = () => {
       </div>
       <HowItWorks></HowItWorks>
       <TrendingLatestReviews></TrendingLatestReviews>
+      <Testimonials></Testimonials>
+      <Newsletter></Newsletter>
     
     </div>
   );
