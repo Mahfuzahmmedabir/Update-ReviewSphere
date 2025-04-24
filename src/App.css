@@ -41,6 +41,10 @@
   color: #888;
 } */
 
-.active{
-  text-decoration:  underline;
+.active {
+  text-decoration: underline;
+}
+.dark {
+  background-color: black;
+  color: white;
 }

@@ -7,11 +7,7 @@ import { Link } from 'react-router-dom';
 const HomeCard = ({ service }) => {
   const { _id, Description, category, Photourl, Price, ServiceTitle } = service;
 
-    // useEffect(() => {
-    //   AOS.init({ duration: 1000 });
-    // }, []);
-  
-  
+   
   return (
     <div  className="flex flex-1">
       <div className="p-3 rounded-2xl  border hover:shadow-xl">

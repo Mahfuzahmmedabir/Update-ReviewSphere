@@ -50,12 +50,11 @@ const Login = () => {
       <Helmet>
         <title>ReviewSphere || Login</title>
       </Helmet>
-      <div className="hero lg:bg-base-200">
+      <div className="hero h-screen lg:bg-base-200">
         <div className="hero-content flex-col gap-10 lg:gap-96 lg:flex-row">
           <div className="">
             <Lottie animationData={loginAnimation}></Lottie>
-          </div>
-
+          </div> 
           <div className="card bg-base-100 w-full max-w-sm shrink-0 shadow-2xl">
             <form onSubmit={handealLogin} className="card-body">
               <h2 className="text-center text-3xl">Login </h2>

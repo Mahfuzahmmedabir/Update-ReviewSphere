@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import AuthContext from '../../context/AuthContext';
 import Swal from 'sweetalert2';
+// import DarkLight from '../../page/DarkAndLightMode/DarkLight';
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const links = (
@@ -25,7 +26,7 @@ const Navbar = () => {
     });
   };
   return (
-    <div className="navbar sticky top-0 z-50  bg-base-100">
+    <div className="navbar sticky top-0 z-50 bg-base-100">
       <div className="navbar-start z-50">
         <div className="dropdown">
           <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
@@ -59,6 +60,14 @@ const Navbar = () => {
         </ul>
       </div>
       <div className="navbar-end">
+        {/* <div className=" dark:bg-gray-900   flex justify-center items-center">
+          <div className="text-center">
+            <div className="mt-4">
+              <DarkLight></DarkLight>
+            </div>
+          </div>
+        </div> */}
+
         <div>
           {user ? (
             <div>

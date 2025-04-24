@@ -2,7 +2,7 @@ import React from 'react';
 
 const Newsletter = () => {
   return (
-    <section className="py-12 ">
+    <section className="py-12 bg-dark text-dark">
       {/* Section Header */}
       <div className="max-w-4xl mx-auto text-center" data-aos="fade-up">
         <h2 className="text-4xl font-bold text-gray-800 mb-4">Stay Updated!</h2>
