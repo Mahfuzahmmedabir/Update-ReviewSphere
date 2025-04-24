@@ -10,9 +10,8 @@ import SliedImg from './SliedImg';
 import CountUp from 'react-countup';
 
 const Banner = () => {
-  const [countup, setCountup] = useState(10);
   return (
-    <div className="z-10">
+    <div className="z-10 inset-0 bg-black/ ">
       <Swiper
         pagination={{
           dynamicBullets: true,
@@ -26,14 +25,14 @@ const Banner = () => {
               <div>
                 {/* text */}
                 <div>
-                  <h2 className="text-black">
-                    Welcome to the{' '}
-                    <span className="text-[#efca08]">ReviewSphere</span>
+                  <h2 className=" ">
+                    Welcome to the
+                    <span className="text-[#353b48] font-bold"> ReviewSphere</span>
                   </h2>
                 </div>
                 <div className=" lg:flex lg:justify-between gap-10 mt-10  ">
                   {/* countup 1 */}
-                  <div className="text-[#efca08]  ">
+                  <div className="text-[#353b48]  ">
                     <div className="flex justify-center  ">
                       <CountUp
                         className="text-7xl"
@@ -61,7 +60,7 @@ const Banner = () => {
                     <p className=" ">Service</p>
                   </div>
                   {/* countup 3 */}
-                  <div className="lg:text-slate-950 text-white  ">
+                  <div className="lg:text-slate-950   text-white  ">
                     <div className="flex justify-center">
                       <CountUp
                         className="text-7xl "
@@ -83,9 +82,10 @@ const Banner = () => {
           ></SliedImg>
         </SwiperSlide>
         <SwiperSlide>
+          <div className='inset-0 bg-black/25'>
           <SliedImg
             text={
-              <p className=" bg-opacity-60 lg:w-[1000px]">
+              <p className="lg:w-[1000px]">
                 Your opinion matters! Share your experiences, explore authentic
                 insights, and help others make better choices. Join ReviewSphere
                 and be a part of a transparent and informed community.
@@ -93,6 +93,8 @@ const Banner = () => {
             }
             image={img2}
           ></SliedImg>
+          </div>
+          
         </SwiperSlide>
         <SwiperSlide>
           <SliedImg
