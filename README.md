@@ -24,6 +24,6 @@ ReviewSphere is a user-friendly Application designed to connect users with trust
 
 ## Acknowledgements
 
- - [Live Link](https://whimsical-seahorse-18aad8.netlify.app/)
+ - [Live Link](https://monumental-crisp-8e0547.netlify.app/)
 
 
