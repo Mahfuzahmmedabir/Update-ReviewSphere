@@ -35,10 +35,9 @@ const Login = () => {
         const errorCode = error.code;
         const errorMessage = error.message;
         Swal.fire(`${errorMessage}`);
-        // ..
+        
       });
   };
-
   const handealPopup = () => {
     signUpwithpopup().then(result => {
       naveget('/');

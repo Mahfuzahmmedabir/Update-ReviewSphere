@@ -7,7 +7,7 @@ import { Helmet } from 'react-helmet';
 
 const DetailsService = () => {
   const [review, setReview] = useState([]);
-  console.log(review);
+  console.log(review.length);
 
   const details = useLoaderData();
   console.log(details);
@@ -29,8 +29,8 @@ const DetailsService = () => {
       <Helmet>
         <title>ReviewSphere || Details</title>
       </Helmet>
-      <div className=" bg-base-100 flex justify-center  m-10  w-full ">
-        <div className="flex gap-4">
+      <div className="  flex justify-center bg-base-200  p-10   ">
+        <div className="flex gap-4 ">
           <figure>
             <img className="w-64 h-48 p-4" src={Photourl} alt="Shoes" />
           </figure>
@@ -43,8 +43,15 @@ const DetailsService = () => {
           </div>
         </div>
       </div>
-      <div className=" bg-slate-200 p-4">
-        <h2 className="text-2xl text-center font-bold">Recent reviews</h2>
+      <div className="p-4">
+      {review.length == 0 ? <>
+      <h2 className="text-2xl text-center font-bold">Don't have any review</h2>
+      
+      </> : <>
+      <h2 className="text-2xl text-center font-bold">Recent reviews</h2></>
+      
+      }  
+        
         {review?.map(item => (
           <Review key={item._id} review={item}></Review>
         ))}

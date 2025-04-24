@@ -23,7 +23,7 @@ const AddService = () => {
       });
   };
   return (
-    <div className="  ">
+    <div>
       <Helmet>
         <title>ReviewSphere || Add service</title>
       </Helmet>
